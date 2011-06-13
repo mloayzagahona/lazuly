@@ -1,4 +1,5 @@
 #summary MinuteProject show case on lazuly conference db
+#labels minuteproject,jpa2,vaadin,openxava,playframework,grails
 
 = Introduction =
 
