@@ -18,6 +18,8 @@ The following 'smart' reverse-engineering solutions will be demonstrated for:
 
 Lazuly database holds information related to conference information such as conference_member, speaker, sponsors, speech_evalutions ...
 
+[http://lazuly.googlecode.com/files/lazuly-0.1.svg]
+
 The goal is to have a working business model that illustrate some complexity and show how by enriching with the minimun set of info, there is the possibility to have comprehensive reverse-engineering solutions that spans over different applications artifacts and are not limited to creating Domain Object in an single directory.
 
 The user will learn how to use minuteproject to:
