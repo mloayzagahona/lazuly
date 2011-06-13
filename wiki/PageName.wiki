@@ -16,6 +16,7 @@ The following 'smart' reverse-engineering solutions will be demonstrated for:
 = Details =
 
 Lazuly database holds information related to conference information such as conference_member, speaker, sponsors, speech_evalutions ...
+
 The goal is to have a working business model that illustrate some complexity and show how by enriching with the minimun set of info, there is the possibility to have comprehensive reverse-engineering solutions that spans over different applications artifacts and are not limited to creating Domain Object in an single directory.
 
 The user will learn how to use minuteproject to:
@@ -24,4 +25,3 @@ The user will learn how to use minuteproject to:
  * create enums for specific fields
  * add conventions that affects all model entities
  * enrich views to add them a primary key and foreign keys
-
