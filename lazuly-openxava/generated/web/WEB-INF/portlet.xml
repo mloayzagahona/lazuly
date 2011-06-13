@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<portlet-app id="conference"
+	xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" 
+	version="1.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd"> 
+	<portlet id="Country">
+		<description>conference - Country</description>       
+		<description xml:lang="en">conference - Country</description>         
+		<portlet-name>Country</portlet-name>
+		<display-name>conference - Country</display-name>    
+		<display-name xml:lang="en">conference - Country</display-name>    
+		<portlet-class>org.openxava.web.portlets.XavaPortlet</portlet-class>
+		<init-param>
+			<name>Application</name>
+			<value>conference</value>
+		</init-param>
+		<init-param>
+			<name>Module</name>
+			<value>Country</value>
+		</init-param> 
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale> 
+    	<resource-bundle>portlets/Country</resource-bundle>
+	</portlet> 
+	<portlet id="Role">
+		<description>conference - Role</description>       
+		<description xml:lang="en">conference - Role</description>         
+		<portlet-name>Role</portlet-name>
+		<display-name>conference - Role</display-name>    
+		<display-name xml:lang="en">conference - Role</display-name>    
+		<portlet-class>org.openxava.web.portlets.XavaPortlet</portlet-class>
+		<init-param>
+			<name>Application</name>
+			<value>conference</value>
+		</init-param>
+		<init-param>
+			<name>Module</name>
+			<value>Role</value>
+		</init-param> 
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale> 
+    	<resource-bundle>portlets/Role</resource-bundle>
+	</portlet> 
+	<portlet id="Address">
+		<description>conference - Address</description>       
+		<description xml:lang="en">conference - Address</description>         
+		<portlet-name>Address</portlet-name>
+		<display-name>conference - Address</display-name>    
+		<display-name xml:lang="en">conference - Address</display-name>    
+		<portlet-class>org.openxava.web.portlets.XavaPortlet</portlet-class>
+		<init-param>
+			<name>Application</name>
+			<value>conference</value>
+		</init-param>
+		<init-param>
+			<name>Module</name>
+			<value>Address</value>
+		</init-param> 
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale> 
+    	<resource-bundle>portlets/Address</resource-bundle>
+	</portlet> 
+	<portlet id="Conference">
+		<description>conference - Conference</description>       
+		<description xml:lang="en">conference - Conference</description>         
+		<portlet-name>Conference</portlet-name>
+		<display-name>conference - Conference</display-name>    
+		<display-name xml:lang="en">conference - Conference</display-name>    
+		<portlet-class>org.openxava.web.portlets.XavaPortlet</portlet-class>
+		<init-param>
+			<name>Application</name>
+			<value>conference</value>
+		</init-param>
+		<init-param>
+			<name>Module</name>
+			<value>Conference</value>
+		</init-param> 
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale> 
+    	<resource-bundle>portlets/Conference</resource-bundle>
+	</portlet> 
+	<portlet id="ConferenceFeedback">
+		<description>conference - ConferenceFeedback</description>       
+		<description xml:lang="en">conference - ConferenceFeedback</description>         
+		<portlet-name>ConferenceFeedback</portlet-name>
+		<display-name>conference - ConferenceFeedback</display-name>    
+		<display-name xml:lang="en">conference - ConferenceFeedback</display-name>    
+		<portlet-class>org.openxava.web.portlets.XavaPortlet</portlet-class>
+		<init-param>
+			<name>Application</name>
+			<value>conference</value>
+		</init-param>
+		<init-param>
+			<name>Module</name>
+			<value>ConferenceFeedback</value>
+		</init-param> 
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale> 
+    	<resource-bundle>portlets/ConferenceFeedback</resource-bundle>
+	</portlet> 
+	<portlet id="ConferenceMember">
+		<description>conference - ConferenceMember</description>       
+		<description xml:lang="en">conference - ConferenceMember</description>         
+		<portlet-name>ConferenceMember</portlet-name>
+		<display-name>conference - ConferenceMember</display-name>    
+		<display-name xml:lang="en">conference - ConferenceMember</display-name>    
+		<portlet-class>org.openxava.web.portlets.XavaPortlet</portlet-class>
+		<init-param>
+			<name>Application</name>
+			<value>conference</value>
+		</init-param>
+		<init-param>
+			<name>Module</name>
+			<value>ConferenceMember</value>
+		</init-param> 
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale> 
+    	<resource-bundle>portlets/ConferenceMember</resource-bundle>
+	</portlet> 
+	<portlet id="Evaluation">
+		<description>conference - Evaluation</description>       
+		<description xml:lang="en">conference - Evaluation</description>         
+		<portlet-name>Evaluation</portlet-name>
+		<display-name>conference - Evaluation</display-name>    
+		<display-name xml:lang="en">conference - Evaluation</display-name>    
+		<portlet-class>org.openxava.web.portlets.XavaPortlet</portlet-class>
+		<init-param>
+			<name>Application</name>
+			<value>conference</value>
+		</init-param>
+		<init-param>
+			<name>Module</name>
+			<value>Evaluation</value>
+		</init-param> 
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale> 
+    	<resource-bundle>portlets/Evaluation</resource-bundle>
+	</portlet> 
+	<portlet id="Presentation">
+		<description>conference - Presentation</description>       
+		<description xml:lang="en">conference - Presentation</description>         
+		<portlet-name>Presentation</portlet-name>
+		<display-name>conference - Presentation</display-name>    
+		<display-name xml:lang="en">conference - Presentation</display-name>    
+		<portlet-class>org.openxava.web.portlets.XavaPortlet</portlet-class>
+		<init-param>
+			<name>Application</name>
+			<value>conference</value>
+		</init-param>
+		<init-param>
+			<name>Module</name>
+			<value>Presentation</value>
+		</init-param> 
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale> 
+    	<resource-bundle>portlets/Presentation</resource-bundle>
+	</portlet> 
+	<portlet id="PresentationPlace">
+		<description>conference - PresentationPlace</description>       
+		<description xml:lang="en">conference - PresentationPlace</description>         
+		<portlet-name>PresentationPlace</portlet-name>
+		<display-name>conference - PresentationPlace</display-name>    
+		<display-name xml:lang="en">conference - PresentationPlace</display-name>    
+		<portlet-class>org.openxava.web.portlets.XavaPortlet</portlet-class>
+		<init-param>
+			<name>Application</name>
+			<value>conference</value>
+		</init-param>
+		<init-param>
+			<name>Module</name>
+			<value>PresentationPlace</value>
+		</init-param> 
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale> 
+    	<resource-bundle>portlets/PresentationPlace</resource-bundle>
+	</portlet> 
+	<portlet id="Speaker">
+		<description>conference - Speaker</description>       
+		<description xml:lang="en">conference - Speaker</description>         
+		<portlet-name>Speaker</portlet-name>
+		<display-name>conference - Speaker</display-name>    
+		<display-name xml:lang="en">conference - Speaker</display-name>    
+		<portlet-class>org.openxava.web.portlets.XavaPortlet</portlet-class>
+		<init-param>
+			<name>Application</name>
+			<value>conference</value>
+		</init-param>
+		<init-param>
+			<name>Module</name>
+			<value>Speaker</value>
+		</init-param> 
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale> 
+    	<resource-bundle>portlets/Speaker</resource-bundle>
+	</portlet> 
+	<portlet id="Sponsor">
+		<description>conference - Sponsor</description>       
+		<description xml:lang="en">conference - Sponsor</description>         
+		<portlet-name>Sponsor</portlet-name>
+		<display-name>conference - Sponsor</display-name>    
+		<display-name xml:lang="en">conference - Sponsor</display-name>    
+		<portlet-class>org.openxava.web.portlets.XavaPortlet</portlet-class>
+		<init-param>
+			<name>Application</name>
+			<value>conference</value>
+		</init-param>
+		<init-param>
+			<name>Module</name>
+			<value>Sponsor</value>
+		</init-param> 
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale> 
+    	<resource-bundle>portlets/Sponsor</resource-bundle>
+	</portlet> 
+	<portlet id="MemberPerRoleCountryAndConference">
+		<description>conference - MemberPerRoleCountryAndConference</description>       
+		<description xml:lang="en">conference - MemberPerRoleCountryAndConference</description>         
+		<portlet-name>MemberPerRoleCountryAndConference</portlet-name>
+		<display-name>conference - MemberPerRoleCountryAndConference</display-name>    
+		<display-name xml:lang="en">conference - MemberPerRoleCountryAndConference</display-name>    
+		<portlet-class>org.openxava.web.portlets.XavaPortlet</portlet-class>
+		<init-param>
+			<name>Application</name>
+			<value>conference</value>
+		</init-param>
+		<init-param>
+			<name>Module</name>
+			<value>MemberPerRoleCountryAndConference</value>
+		</init-param> 
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale> 
+    	<resource-bundle>portlets/MemberPerRoleCountryAndConference</resource-bundle>
+	</portlet> 
+	<portlet id="MemberPerCountryAndConference">
+		<description>conference - MemberPerCountryAndConference</description>       
+		<description xml:lang="en">conference - MemberPerCountryAndConference</description>         
+		<portlet-name>MemberPerCountryAndConference</portlet-name>
+		<display-name>conference - MemberPerCountryAndConference</display-name>    
+		<display-name xml:lang="en">conference - MemberPerCountryAndConference</display-name>    
+		<portlet-class>org.openxava.web.portlets.XavaPortlet</portlet-class>
+		<init-param>
+			<name>Application</name>
+			<value>conference</value>
+		</init-param>
+		<init-param>
+			<name>Module</name>
+			<value>MemberPerCountryAndConference</value>
+		</init-param> 
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale> 
+    	<resource-bundle>portlets/MemberPerCountryAndConference</resource-bundle>
+	</portlet> 
+</portlet-app>
