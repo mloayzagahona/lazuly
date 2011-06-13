@@ -37,7 +37,7 @@ public class Presentation {
     private String abstractName; 
     @Column(name="title",  length=255, nullable=false,  unique=false)
     private String title; 
-    @Enumerated
+    @Enumerated (EnumType.STRING)    
     private PresentationStatusEnum status; 
     @Column(name="proposal_time",    nullable=true,  unique=false)
     private Timestamp proposalTime; 
