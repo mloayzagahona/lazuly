@@ -10,8 +10,8 @@ MinuteProject presents a set of reverse-engineering capabilities based on the La
 Lazuly conference db in version 0.1 contains 13 tables, 2 views.
 
 The following 'smart' reverse-engineering solutions will be demonstrated for:
-* [jpa2 jpa2]
-* [openxava]
-* [vaadin]
-* [playframework]
-* [grails]
+ * jpa2 
+ * openxava
+ * vaadin
+ * playframework
+ * grails
