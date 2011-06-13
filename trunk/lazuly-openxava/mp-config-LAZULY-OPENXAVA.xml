@@ -1,0 +1,159 @@
+<!DOCTYPE root>
+<generator-config>
+	<configuration>
+		<model name="conference" version="1.0" package-root="net.sf.mp.demo">
+			<data-model>
+				<driver name="mysql" version="5.1.16" groupId="mysql" artifactId="mysql-connector-java"></driver>
+				<dataSource>
+					<driverClassName>org.gjt.mm.mysql.Driver</driverClassName>
+					<url>jdbc:mysql://127.0.0.1:3306/conference</url>
+					<username></username>
+					<password></password>
+				</dataSource>
+				<!--
+					for Oracle and DB2 please set the schema <schema> </schema>
+				-->
+				<primaryKeyPolicy oneGlobal="true">
+					<primaryKeyPolicyPattern name="autoincrementPattern"></primaryKeyPolicyPattern>
+				</primaryKeyPolicy>
+			</data-model>
+			<business-model>
+				<!--
+					<generation-condition> <condition type="exclude"
+					startsWith="DUAL"></condition> </generation-condition>
+				-->
+				<business-package default="conference">
+				    <condition type="package" startsWith="STAT" result="statistics"></condition>
+				    <condition type="package" startsWith="COUNTRY" result="admin"></condition>
+				    <condition type="package" startsWith="ROLE" result="admin"></condition>				
+				</business-package>
+				<enrichment>
+					<conventions>
+						<column-naming-convention type="apply-strip-column-name-suffix"
+							pattern-to-strip="_ID" />
+						<reference-naming-convention
+							type="apply-referenced-alias-when-no-ambiguity" is-to-plurialize="true" />
+					</conventions>
+
+					<entity name="COUNTRY" content-type="reference-data">
+						<semantic-reference>
+							<sql-path path="NAME" />
+						</semantic-reference>
+					</entity>
+					<entity name="CONFERENCE_MEMBER">
+						<semantic-reference>
+							<sql-path path="FIRST_NAME" />
+							<sql-path path="LAST_NAME" />
+						</semantic-reference>
+						<field name="STATUS">
+							<property tag="checkconstraint" alias="conference_member_status">
+								<property name="PENDING" value="PENDING" />
+								<property name="ACTIVE" value="ACTIVE" />
+							</property>
+						</field>
+						<field name="EMAIL">
+							<stereotype stereotype="EMAIL" />
+						</field>
+					</entity>
+					<entity name="SPEAKER">
+						<field name="BIO">
+							<stereotype stereotype="HTML_TEXT" />
+						</field>
+						<field name="PHOTO">
+							<stereotype stereotype="PHOTO" />
+						</field>
+						<field name="WEB_SITE_URL">
+							<stereotype stereotype="WEBURL" />
+						</field>
+					</entity>
+					<entity name="PRESENTATION">
+						<field name="STATUS">
+							<property tag="checkconstraint" alias="presentation_status">
+								<property name="PROPOSAL" value="PROPOSAL" />
+								<property name="ACTIVE" value="ACTIVE" />
+							</property>
+						</field>
+					</entity>
+					<entity name="SPONSOR">
+						<field name="STATUS">
+							<property tag="checkconstraint" alias="sponsor_status">
+								<property name="PENDING" value="PENDING" />
+								<property name="ACTIVE" value="ACTIVE" />
+							</property>
+						</field>
+						<field name="PRIVILEGE_TYPE">
+							<property tag="checkconstraint" alias="sponsor_privilege">
+								<property name="GOLDEN" value="Golden" />
+								<property name="SILVER" value="Silver" />
+								<property name="BRONZE" value="Bronze" />
+							</property>
+						</field>
+					</entity>
+					<!-- views -->
+					<entity name="stat_mb_per_ctry_conf" alias="MEMBER_PER_COUNTRY_AND_CONFERENCE">
+						<virtual-primary-key isRealPrimaryKey="true">
+							<property name="virtualPrimaryKey" value="ID" />
+						</virtual-primary-key>
+					</entity>
+					<entity name="stat_mb_by_role" alias="MEMBER_PER_ROLE_COUNTRY_AND_CONFERENCE">
+						<virtual-primary-key isRealPrimaryKey="true">
+							<property name="virtualPrimaryKey" value="id" />
+						</virtual-primary-key>
+						<field name="stat_mb_per_ctry_conf_ID" linkToTargetEntity="stat_mb_per_ctry_conf"
+							linkToTargetField="id"></field>
+					</entity>
+				</enrichment>
+			</business-model>
+		</model>
+		<targets>
+			<!-- vaadin -->
+			<target refname="BackendOnBsla" name="bsla-hibernate"
+				fileName="mp-template-config-bsla-hibernate-last-features.xml"
+				outputdir-root="../../DEV/output/vaadin/conferenceHibernate"
+				templatedir-root="../../minuteTemplate/template/framework/bsla">
+			</target>
+			<target refname="MpVaadin" name="vaadin"
+				fileName="mp-template-config-vaadin-last-features.xml"
+				outputdir-root="../../DEV/output/vaadin/conferenceVaadin"
+				templatedir-root="../../minuteTemplate/template/framework/vaadin">
+			</target>
+			<target refname="MavenMaster" name="maven"
+				fileName="mp-template-config-maven.xml" outputdir-root="../../DEV/output/vaadin"
+				templatedir-root="../../minuteTemplate/template/framework/maven">
+			</target>
+			<!-- openxava -->
+			<target refname="OpenXava" name="OpenXava"
+				fileName="mp-template-config-openxava-last-features.xml"
+				outputdir-root="../../DEV/output/openxava/conference"
+				templatedir-root="../../minuteTemplate/template/framework/openxava">
+				<!--<property name="add-spring-security" value="true"/>-->
+			</target>
+			<!--
+				<target refname="SpringSecurity" name="SpringSecurity"
+				fileName="mp-template-config-spring-security.xml"
+				outputdir-root="../../DEV/output/openxava/conference"
+				templatedir-root="../../minuteTemplate/template/framework/security/spring">
+				</target>
+			-->
+			<target refname="JPA2-LIB" fileName="mp-template-config-JPA2-LIB.xml"
+				templatedir-root="../../minuteTemplate/template/framework/jpa">
+			</target>
+			<target refname="JPA2" 
+			   fileName="mp-template-config-JPA2.xml" 
+			   outputdir-root="../../dev/output/JPA2"
+			   templatedir-root="../../minuteTemplate/template/framework/jpa">
+			   <property name="add-querydsl" value="2.1.2"></property>
+			   <property name="add-jpa2-implementation" value="hibernate"></property>
+			</target> 			
+			
+			<!-- roo -->
+			<target refname="Roo" name="Roo"
+				fileName="mp-template-config-roo-last-features.xml" outputdir-root="../../DEV/output/roo/conference"
+				templatedir-root="../../minuteTemplate/template/framework/roo">
+			</target>
+			<target refname="LIB" fileName="mp-template-config-bsla-LIB-features.xml"
+				templatedir-root="../../minuteTemplate/template/framework/bsla">
+			</target>
+		</targets>
+	</configuration>
+</generator-config>
