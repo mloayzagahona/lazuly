@@ -32,9 +32,9 @@ public class Sponsor {
 
     @Column(name="name",  length=45, nullable=false,  unique=false)
     private String name; 
-    @Enumerated
+    @Enumerated (EnumType.STRING)    
     private SponsorPrivilegeTypeEnum privilegeType; 
-    @Enumerated
+    @Enumerated (EnumType.STRING)    
     private SponsorStatusEnum status; 
 
     @ManyToOne (fetch=FetchType.LAZY , optional=false)
