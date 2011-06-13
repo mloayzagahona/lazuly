@@ -1,0 +1,14 @@
+<?xml version = "1.0" encoding = "ISO-8859-1"?>
+ 
+<!DOCTYPE editors SYSTEM "dtds/editors.dtd">
+ 
+<editors>
+
+   <editor name="ConferenceMemberStatusComboEditor" url="ConferenceMemberStatusCombo.jsp" />
+   <editor name="PresentationStatusComboEditor" url="PresentationStatusCombo.jsp" />
+   <editor name="SponsorPrivilegeTypeComboEditor" url="SponsorPrivilegeTypeCombo.jsp" />
+   <editor name="SponsorStatusComboEditor" url="SponsorStatusCombo.jsp" />
+
+
+
+</editors>
