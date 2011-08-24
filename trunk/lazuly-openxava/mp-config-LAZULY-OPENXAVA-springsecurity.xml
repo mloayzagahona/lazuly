@@ -39,7 +39,19 @@
 				    </package>
 				    <package name="admin" alias="Administration">
 				        <security-color roles="administrator"/>
-				    </package>				    
+				    </package>	
+				    <security>
+				        <authentication-to-profile schema-path="CONFERENCE_MEMBER" match-field="EMAIL">
+				  			<profile-branch name="role" schema-path="CON_USER_ROLE.USER_ID,CON_USER_ROLE.ROLE_ID" />
+				  			<profile-branch name="pitches" sql-path="speaker_id,speach.speaker_id" />
+				        </authentication-to-profile>
+				    	<profile name="external-user" />
+				    	<profile name="unit-secretary" >
+				    		<role name="SECRETARY"/>
+				    		<filter sql-path="DG_UNIT_ID" />
+				    	</profile>			    
+				    </security>		
+				    	    
 					<entity name="COUNTRY" content-type="reference-data">
 						<semantic-reference>
 							<sql-path path="NAME" />
