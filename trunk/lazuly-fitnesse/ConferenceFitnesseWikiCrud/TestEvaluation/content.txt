@@ -1,0 +1,30 @@
+!contents -R2 -g -p -f -h
+
+
+!3 Datasource connection information
+
+!|net.sf.minuteproject.fitnesse.fixture.DbConnectionFixture|
+|username| password| url| driverClassName|
+|root| mysql| jdbc:mysql://127.0.0.1:3306/conference | org.gjt.mm.mysql.Driver|
+
+
+!3 Insert into evaluation snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.EvaluationColumnFixture|
+|  ID |   CONFERENCE_MEMBER_ID |   PRESENTATION_ID |   STAR |   COMMENT |   EVALUATION_DATE |  insert? |
+| |  |  |  |  |  |  OK |
+
+!3 Update into evaluation snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.EvaluationColumnFixture|
+|  ID |    CONFERENCE_MEMBER_ID |    PRESENTATION_ID |    STAR |    COMMENT |    EVALUATION_DATE |     WHERE_id |   WHERE_conference_member_id |   WHERE_presentation_id |   WHERE_star |   WHERE_comment |   WHERE_evaluation_date |  update? |
+| |   |   |   |   |   |    |  |  |  |  |  |  OK |
+
+!3 Delete from evaluation snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.EvaluationColumnFixture|
+|  ID |    CONFERENCE_MEMBER_ID |    PRESENTATION_ID |    STAR |    COMMENT |    EVALUATION_DATE |     WHERE_id |   WHERE_conference_member_id |   WHERE_presentation_id |   WHERE_star |   WHERE_comment |   WHERE_evaluation_date |  delete? |
+| |   |   |   |   |   |    |  |  |  |  |  |  OK |
+
+
+
