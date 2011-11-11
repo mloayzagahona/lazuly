@@ -1,0 +1,30 @@
+!contents -R2 -g -p -f -h
+
+
+!3 Datasource connection information
+
+!|net.sf.minuteproject.fitnesse.fixture.DbConnectionFixture|
+|username| password| url| driverClassName|
+|root| mysql| jdbc:mysql://127.0.0.1:3306/conference | org.gjt.mm.mysql.Driver|
+
+
+!3 Insert into role snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.admin.RoleColumnFixture|
+|  ID |   NAME |  insert? |
+| |  |  OK |
+
+!3 Update into role snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.admin.RoleColumnFixture|
+|  ID |    NAME |     WHERE_id |   WHERE_name |  update? |
+| |   |    |  |  OK |
+
+!3 Delete from role snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.admin.RoleColumnFixture|
+|  ID |    NAME |     WHERE_id |   WHERE_name |  delete? |
+| |   |    |  |  OK |
+
+
+

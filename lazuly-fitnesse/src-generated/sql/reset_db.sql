@@ -1,0 +1,13 @@
+delete from conference_feedback;
+delete from evaluation;
+delete from member_role;
+delete from speaker_presentation;
+delete from presentation;
+delete from presentation_place;
+delete from role;
+delete from speaker;
+delete from sponsor;
+delete from conference_member;
+delete from conference;
+delete from address;
+delete from country;

@@ -1,0 +1,25 @@
+!contents -R2 -g -p -f -h
+
+
+!3 Datasource connection information
+
+!|net.sf.minuteproject.fitnesse.fixture.DbConnectionFixture|
+|username| password| url| driverClassName|
+|root| mysql| jdbc:mysql://127.0.0.1:3306/conference | org.gjt.mm.mysql.Driver|
+
+
+!3 Select speaker_presentation snippet
+
+Field row represents the columns to search on.
+Expression contains for each columns the search filter operand. ('=','>','<','>=','<=','contains','startWith' are supported)
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.conference.SpeakerPresentationTableFixture|
+|General Info Input|table|speaker_presentation|
+|Fields |  speaker_id |   presentation_id | 
+|Expression | null |  null |  
+|Value | |  | 
+|Order | |  | 
+|general Info Output|numberOfRow|3| 
+|row#1 | |  | 
+|row#2 | |  | 
+|row#3 | |  | 

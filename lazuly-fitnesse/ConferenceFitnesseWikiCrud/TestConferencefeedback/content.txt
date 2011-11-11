@@ -1,0 +1,30 @@
+!contents -R2 -g -p -f -h
+
+
+!3 Datasource connection information
+
+!|net.sf.minuteproject.fitnesse.fixture.DbConnectionFixture|
+|username| password| url| driverClassName|
+|root| mysql| jdbc:mysql://127.0.0.1:3306/conference | org.gjt.mm.mysql.Driver|
+
+
+!3 Insert into conference_feedback snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.ConferenceFeedbackColumnFixture|
+|  ID |   COMMENT |   FEEDBACK_DATE |   CONFERENCE_ID |   CONFERENCE_MEMBER_ID |  insert? |
+| |  |  |  |  |  OK |
+
+!3 Update into conference_feedback snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.ConferenceFeedbackColumnFixture|
+|  ID |    COMMENT |    FEEDBACK_DATE |    CONFERENCE_ID |    CONFERENCE_MEMBER_ID |     WHERE_id |   WHERE_comment |   WHERE_feedback_date |   WHERE_conference_id |   WHERE_conference_member_id |  update? |
+| |   |   |   |   |    |  |  |  |  |  OK |
+
+!3 Delete from conference_feedback snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.ConferenceFeedbackColumnFixture|
+|  ID |    COMMENT |    FEEDBACK_DATE |    CONFERENCE_ID |    CONFERENCE_MEMBER_ID |     WHERE_id |   WHERE_comment |   WHERE_feedback_date |   WHERE_conference_id |   WHERE_conference_member_id |  delete? |
+| |   |   |   |   |    |  |  |  |  |  OK |
+
+
+
