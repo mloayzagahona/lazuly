@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jndi="http://www.springframework.org/schema/jee"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                           http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+
+    <bean id="placeHolderConfig"
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location"><value>classpath:net/sf/mp/demo/conference/factory/spring/spring-config-Conference.properties</value></property>
+    </bean>     
+
+    <bean id="conferenceDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName"><value>${jdbc.conference.driverClassName}</value></property>
+        <property name="url"><value>${jdbc.conference.url}</value></property>
+        <property name="username"><value>${jdbc.conference.username}</value></property>
+        <property name="password"><value>${jdbc.conference.password}</value></property>
+    </bean>
+    
+    <!-- correct bean to effectively insert (and commit) -->
+    <bean id="conferenceTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="JPAconferenceFactory"/>
+        <property name="dataSource" ref="conferenceDataSource"/>
+    </bean>
+
+    <!-- to get the entity manager -->
+    <tx:annotation-driven transaction-manager="conferenceTransactionManager"/>
+    
+</beans>

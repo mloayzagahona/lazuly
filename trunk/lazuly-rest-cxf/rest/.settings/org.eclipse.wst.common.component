@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="lazuly-rest">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/lazuly-bsla/lazuly-bsla">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/lazuly-jpa2/lazuly-jpa2">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="conferenceRestCxfBsla"/>
+        <property name="java-output-path" value="/lazuly-rest/target/classes"/>
+    </wb-module>
+</project-modules>

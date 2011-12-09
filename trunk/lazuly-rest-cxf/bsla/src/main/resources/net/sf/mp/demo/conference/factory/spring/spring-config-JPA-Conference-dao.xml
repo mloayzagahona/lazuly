@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+    <!-- Import Dao definitions for business components -->
+
+   <!-- admin -->
+   <import resource="classpath:net/sf/mp/demo/conference/factory/spring/admin/dao-JPA-Admin.xml"/>
+   <!-- conference -->
+   <import resource="classpath:net/sf/mp/demo/conference/factory/spring/conference/dao-JPA-Conference.xml"/>
+   <!-- statistics -->
+   <import resource="classpath:net/sf/mp/demo/conference/factory/spring/statistics/dao-JPA-Statistics.xml"/>
+
+    <!-- Import Ext Dao definitions for business components -->
+   <!-- admin extended dao -->
+   <import resource="classpath:net/sf/mp/demo/conference/factory/spring/admin/dao-ext-JPA-Admin.xml"/>
+   <!-- conference extended dao -->
+   <import resource="classpath:net/sf/mp/demo/conference/factory/spring/conference/dao-ext-JPA-Conference.xml"/>
+   <!-- statistics extended dao -->
+   <import resource="classpath:net/sf/mp/demo/conference/factory/spring/statistics/dao-ext-JPA-Statistics.xml"/>
+
+</beans>
