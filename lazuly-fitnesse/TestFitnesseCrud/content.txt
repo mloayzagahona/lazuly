@@ -1,0 +1,36 @@
+!contents -R2 -g -p -f -h
+
+
+!1 This is conference test suite
+
+
+!3 Package admin
+
+>country
+>role
+
+!3 Package conference
+
+>address
+>conference
+>conferenceFeedback
+>conferenceMember
+>evaluation
+>memberRole
+>presentation
+>presentationPlace
+>speaker
+>speakerPresentation
+>sponsor
+
+!3 Package statistics
+
+>statMbByRole
+>statMbPerCtryConf
+
+
+!3 Variables
+
+
+
+!3 The classpath used for those tests:

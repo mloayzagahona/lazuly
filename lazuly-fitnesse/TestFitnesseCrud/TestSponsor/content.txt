@@ -1,0 +1,30 @@
+!contents -R2 -g -p -f -h
+
+
+!3 Datasource connection information
+
+!|net.sf.minuteproject.fitnesse.fixture.DbConnectionFixture|
+|username| password| url| driverClassName|
+|root| mysql| jdbc:mysql://127.0.0.1:3306/conference | org.gjt.mm.mysql.Driver|
+
+
+!3 Insert into sponsor snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.SponsorColumnFixture|
+|  id |   name |   privilege_type |   status |   conference_id |   address_id |  insert? |
+| |  |  |  |  |  |  OK |
+
+!3 Update into sponsor snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.SponsorColumnFixture|
+|  id |    name |    privilege_type |    status |    conference_id |    address_id |     WHERE_id |   WHERE_name |   WHERE_privilege_type |   WHERE_status |   WHERE_conference_id |   WHERE_address_id |  update? |
+| |   |   |   |   |   |    |  |  |  |  |  |  OK |
+
+!3 Delete from sponsor snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.SponsorColumnFixture|
+|  id |    name |    privilege_type |    status |    conference_id |    address_id |     WHERE_id |   WHERE_name |   WHERE_privilege_type |   WHERE_status |   WHERE_conference_id |   WHERE_address_id |  delete? |
+| |   |   |   |   |   |    |  |  |  |  |  |  OK |
+
+
+

@@ -1,0 +1,19 @@
+<!DOCTYPE etl SYSTEM "http://scriptella.javaforge.com/dtd/etl.dtd">
+<etl>
+
+    <description>Database reset script</description>
+    <properties>
+        <include href="./db.properties"/>
+    </properties>
+    <connection 
+    	driver="${jdbc.conference.driverClassName}" 
+    	url="${jdbc.conference.url}" 
+    	user="${jdbc.conference.username}" 
+    	password="${jdbc.conference.password}"/>
+    <script>
+		<include href="./sql/reset_db.sql"/>
+		<include href="./sql/insert_reference_data.sql"/>
+		<include href="./sql/commit.sql"/>
+    </script>
+
+</etl>

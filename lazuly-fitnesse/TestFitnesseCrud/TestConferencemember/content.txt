@@ -1,0 +1,30 @@
+!contents -R2 -g -p -f -h
+
+
+!3 Datasource connection information
+
+!|net.sf.minuteproject.fitnesse.fixture.DbConnectionFixture|
+|username| password| url| driverClassName|
+|root| mysql| jdbc:mysql://127.0.0.1:3306/conference | org.gjt.mm.mysql.Driver|
+
+
+!3 Insert into conference_member snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.ConferenceMemberColumnFixture|
+|  id |   conference_id |   first_name |   last_name |   email |   address_id |   status |  insert? |
+| |  |  |  |  |  |  |  OK |
+
+!3 Update into conference_member snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.ConferenceMemberColumnFixture|
+|  id |    conference_id |    first_name |    last_name |    email |    address_id |    status |     WHERE_id |   WHERE_conference_id |   WHERE_first_name |   WHERE_last_name |   WHERE_email |   WHERE_address_id |   WHERE_status |  update? |
+| |   |   |   |   |   |   |    |  |  |  |  |  |  |  OK |
+
+!3 Delete from conference_member snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.ConferenceMemberColumnFixture|
+|  id |    conference_id |    first_name |    last_name |    email |    address_id |    status |     WHERE_id |   WHERE_conference_id |   WHERE_first_name |   WHERE_last_name |   WHERE_email |   WHERE_address_id |   WHERE_status |  delete? |
+| |   |   |   |   |   |   |    |  |  |  |  |  |  |  OK |
+
+
+

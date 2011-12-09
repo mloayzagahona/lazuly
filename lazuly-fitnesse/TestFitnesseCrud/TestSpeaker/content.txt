@@ -1,0 +1,30 @@
+!contents -R2 -g -p -f -h
+
+
+!3 Datasource connection information
+
+!|net.sf.minuteproject.fitnesse.fixture.DbConnectionFixture|
+|username| password| url| driverClassName|
+|root| mysql| jdbc:mysql://127.0.0.1:3306/conference | org.gjt.mm.mysql.Driver|
+
+
+!3 Insert into speaker snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.SpeakerColumnFixture|
+|  id |   conference_member_id |   bio |   photo |   web_site_url |   sponsor_id |  insert? |
+| |  |  |  |  |  |  OK |
+
+!3 Update into speaker snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.SpeakerColumnFixture|
+|  id |    conference_member_id |    bio |    photo |    web_site_url |    sponsor_id |     WHERE_id |   WHERE_conference_member_id |   WHERE_bio |   WHERE_photo |   WHERE_web_site_url |   WHERE_sponsor_id |  update? |
+| |   |   |   |   |   |    |  |  |  |  |  |  OK |
+
+!3 Delete from speaker snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.SpeakerColumnFixture|
+|  id |    conference_member_id |    bio |    photo |    web_site_url |    sponsor_id |     WHERE_id |   WHERE_conference_member_id |   WHERE_bio |   WHERE_photo |   WHERE_web_site_url |   WHERE_sponsor_id |  delete? |
+| |   |   |   |   |   |    |  |  |  |  |  |  OK |
+
+
+

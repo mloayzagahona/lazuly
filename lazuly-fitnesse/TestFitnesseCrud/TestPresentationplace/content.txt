@@ -1,0 +1,30 @@
+!contents -R2 -g -p -f -h
+
+
+!3 Datasource connection information
+
+!|net.sf.minuteproject.fitnesse.fixture.DbConnectionFixture|
+|username| password| url| driverClassName|
+|root| mysql| jdbc:mysql://127.0.0.1:3306/conference | org.gjt.mm.mysql.Driver|
+
+
+!3 Insert into presentation_place snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.PresentationPlaceColumnFixture|
+|  id |   location |   number_of_seats |  insert? |
+| |  |  |  OK |
+
+!3 Update into presentation_place snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.PresentationPlaceColumnFixture|
+|  id |    location |    number_of_seats |     WHERE_id |   WHERE_location |   WHERE_number_of_seats |  update? |
+| |   |   |    |  |  |  OK |
+
+!3 Delete from presentation_place snippet
+
+!|net.sf.mp.demo.conference.fitnesse.fixture.crud.conference.PresentationPlaceColumnFixture|
+|  id |    location |    number_of_seats |     WHERE_id |   WHERE_location |   WHERE_number_of_seats |  delete? |
+| |   |   |    |  |  |  OK |
+
+
+
