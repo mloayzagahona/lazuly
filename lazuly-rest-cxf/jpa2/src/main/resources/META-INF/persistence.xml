@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
+<!--MP-MANAGED-UPDATABLE-BEGINNING-ENABLE @PERSISTENCE-UNIT-conference@-->
+    <persistence-unit name="conference">
+<!--MP-MANAGED-UPDATABLE-ENDING-->
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+<!--MP-MANAGED-UPDATABLE-BEGINNING-ENABLE @DATASOURCE-conference@-->
+        <non-jta-data-source>java:comp/env/jdbc/conferenceDS</non-jta-data-source>	
+<!--MP-MANAGED-UPDATABLE-ENDING-->
+        <!-- admin -->	
+        <class>net.sf.mp.demo.conference.domain.admin.Country</class>
+        <class>net.sf.mp.demo.conference.domain.admin.Role</class>
+
+        <!-- conference -->	
+        <class>net.sf.mp.demo.conference.domain.conference.Address</class>
+        <class>net.sf.mp.demo.conference.domain.conference.Conference</class>
+        <class>net.sf.mp.demo.conference.domain.conference.ConferenceFeedback</class>
+        <class>net.sf.mp.demo.conference.domain.conference.ConferenceMember</class>
+        <class>net.sf.mp.demo.conference.domain.conference.Evaluation</class>
+        <class>net.sf.mp.demo.conference.domain.conference.Presentation</class>
+        <class>net.sf.mp.demo.conference.domain.conference.PresentationPlace</class>
+        <class>net.sf.mp.demo.conference.domain.conference.Speaker</class>
+        <class>net.sf.mp.demo.conference.domain.conference.Sponsor</class>
+
+        <!-- statistics -->
+        <class>net.sf.mp.demo.conference.domain.statistics.StatMbByRole</class>
+        <class>net.sf.mp.demo.conference.domain.statistics.StatMbPerCtryConf</class>
+
+
+        <properties>
+            <property name="hibernate.show_sql" value="false" />
+            <property name="hibernate.format_sql" value="false" />	
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.cache.provider_class" value="net.sf.ehcache.hibernate.SingletonEhCacheProvider" />
+            <property name="net.sf.ehcache.configurationResourceName" value="/ehcache.xml" />
+            <property name="hibernate.cache.use_query_cache" value="true" />
+            <property name="hibernate.cache.use_second_level_cache" value="true" />
+<!--MP-MANAGED-ADDED-AREA-BEGINNING @properties@-->
+<!--MP-MANAGED-ADDED-AREA-ENDING @properties@-->
+        </properties> 
+
+
+<!--MP-MANAGED-ADDED-AREA-BEGINNING @persistence-unit@-->
+<!--MP-MANAGED-ADDED-AREA-ENDING @persistence-unit@-->
+    </persistence-unit>
+
+<!--MP-MANAGED-ADDED-AREA-BEGINNING @persistence@-->
+<!--MP-MANAGED-ADDED-AREA-ENDING @persistence@-->
+
+</persistence>
