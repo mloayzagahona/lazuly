@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+    <!-- Dao JPA -->
+    <import resource="classpath:net/sf/mp/demo/conference/factory/spring/spring-config-JPA-Conference-dao.xml"/>    
+
+    <!-- hibernate config to put in an appart config file-->
+    <bean id="JPAconferenceFactory" autowire="byName"
+        class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<!-- all connection information are retrieve from the persistence file-->
+        <property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml" />
+    </bean>
+    
+    <!-- Database -->
+    <import resource="classpath:net/sf/mp/demo/conference/factory/spring/spring-config-Conference-database.xml"/>    
+
+</beans>
+

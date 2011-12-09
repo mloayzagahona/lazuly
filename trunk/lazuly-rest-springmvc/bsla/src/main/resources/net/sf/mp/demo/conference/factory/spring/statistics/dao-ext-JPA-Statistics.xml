@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+    <bean id="statMbByRoleExtDao" class="net.sf.mp.demo.conference.dao.impl.jpa.statistics.StatMbByRoleExtendedJPAImpl" singleton="false" >
+        <property name="entityManagerFactory"><ref bean="JPAconferenceFactory"/></property>
+    </bean>
+    <bean id="statMbPerCtryConfExtDao" class="net.sf.mp.demo.conference.dao.impl.jpa.statistics.StatMbPerCtryConfExtendedJPAImpl" singleton="false" >
+        <property name="entityManagerFactory"><ref bean="JPAconferenceFactory"/></property>
+    </bean>
+
+</beans>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+    <bean id="countryDao" class="net.sf.mp.demo.conference.dao.impl.jpa.admin.CountryJPAImpl" singleton="false" >
+        <property name="entityManagerFactory"><ref bean="JPAconferenceFactory"/></property>
+    </bean>
+    <bean id="roleDao" class="net.sf.mp.demo.conference.dao.impl.jpa.admin.RoleJPAImpl" singleton="false" >
+        <property name="entityManagerFactory"><ref bean="JPAconferenceFactory"/></property>
+    </bean>
+
+</beans>

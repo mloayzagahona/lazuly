@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+    <bean id="addressDao" class="net.sf.mp.demo.conference.dao.impl.jpa.conference.AddressJPAImpl" singleton="false" >
+        <property name="entityManagerFactory"><ref bean="JPAconferenceFactory"/></property>
+    </bean>
+    <bean id="conferenceDao" class="net.sf.mp.demo.conference.dao.impl.jpa.conference.ConferenceJPAImpl" singleton="false" >
+        <property name="entityManagerFactory"><ref bean="JPAconferenceFactory"/></property>
+    </bean>
+    <bean id="conferenceFeedbackDao" class="net.sf.mp.demo.conference.dao.impl.jpa.conference.ConferenceFeedbackJPAImpl" singleton="false" >
+        <property name="entityManagerFactory"><ref bean="JPAconferenceFactory"/></property>
+    </bean>
+    <bean id="conferenceMemberDao" class="net.sf.mp.demo.conference.dao.impl.jpa.conference.ConferenceMemberJPAImpl" singleton="false" >
+        <property name="entityManagerFactory"><ref bean="JPAconferenceFactory"/></property>
+    </bean>
+    <bean id="evaluationDao" class="net.sf.mp.demo.conference.dao.impl.jpa.conference.EvaluationJPAImpl" singleton="false" >
+        <property name="entityManagerFactory"><ref bean="JPAconferenceFactory"/></property>
+    </bean>
+    <bean id="presentationDao" class="net.sf.mp.demo.conference.dao.impl.jpa.conference.PresentationJPAImpl" singleton="false" >
+        <property name="entityManagerFactory"><ref bean="JPAconferenceFactory"/></property>
+    </bean>
+    <bean id="presentationPlaceDao" class="net.sf.mp.demo.conference.dao.impl.jpa.conference.PresentationPlaceJPAImpl" singleton="false" >
+        <property name="entityManagerFactory"><ref bean="JPAconferenceFactory"/></property>
+    </bean>
+    <bean id="speakerDao" class="net.sf.mp.demo.conference.dao.impl.jpa.conference.SpeakerJPAImpl" singleton="false" >
+        <property name="entityManagerFactory"><ref bean="JPAconferenceFactory"/></property>
+    </bean>
+    <bean id="sponsorDao" class="net.sf.mp.demo.conference.dao.impl.jpa.conference.SponsorJPAImpl" singleton="false" >
+        <property name="entityManagerFactory"><ref bean="JPAconferenceFactory"/></property>
+    </bean>
+
+</beans>
