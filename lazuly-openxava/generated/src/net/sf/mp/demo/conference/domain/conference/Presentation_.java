@@ -16,7 +16,7 @@ public class Presentation_ {
 
     public static volatile SingularAttribute<Presentation, Timestamp> startTime;
     public static volatile SingularAttribute<Presentation, Timestamp> endTime;
-    public static volatile SingularAttribute<Presentation, String> abstractName;
+    public static volatile SingularAttribute<Presentation, String> abstract_Name;
     public static volatile SingularAttribute<Presentation, String> title;
     public static volatile SingularAttribute<Presentation, String> status;
     public static volatile SingularAttribute<Presentation, Timestamp> proposalTime;

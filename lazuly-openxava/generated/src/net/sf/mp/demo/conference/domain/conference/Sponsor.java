@@ -1,5 +1,7 @@
 package net.sf.mp.demo.conference.domain.conference;
 
+//MP-MANAGED-ADDED-AREA-BEGINNING @import@
+//MP-MANAGED-ADDED-AREA-ENDING @import@
 import java.sql.*;
 import java.util.Date;
 import java.util.List;
@@ -28,11 +30,12 @@ import net.sf.mp.demo.conference.domain.conference.Conference;
 		name="base",
 		members=
         "" 	
+        + "id  ; "
         + "name  ; "
         + "privilegeType  ; "
         + "status  ; "
-	    + "addressId;"  
-	    + "conferenceId;"  
+        + "conferenceId  ; "
+        + "addressId  ; "
 		),
 	@View(
 		name="Create", 
@@ -43,12 +46,12 @@ import net.sf.mp.demo.conference.domain.conference.Conference;
 		extendsView="base",
         members=
           "" 	
-	    + "speakers { speakers };" //+ "speakerSponsorIds { speakerSponsorIds };" 
+	    + "speakers { speakers };" //+ "${link}${columnclass}s { ${link}${columnclass}s };" 
 	),
 	@View(extendsView="base",
         members=
           "" 	
-	    + "speakers { speakers };" //+ "speakerSponsorIds { speakerSponsorIds };" 
+	    + "speakers { speakers };" //+ "${link}${columnclass}s { ${link}${columnclass}s };" 
 	),
     @View(name="sponsorDEFAULT_VIEW", 
 	   members=
@@ -83,24 +86,43 @@ properties=
     +",  status "
 )
 })
-
+//MP-MANAGED-ADDED-AREA-BEGINNING @class-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @class-annotation@
 public class Sponsor {
 
     @Hidden @Id @Column(name="id" )
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id; 
 
+//MP-MANAGED-ADDED-AREA-BEGINNING @name-field-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @name-field-annotation@
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @ATTRIBUTE-name@
     @Column(name="name",  length=45, nullable=false,  unique=false)
     @Required
-    private String name; 
+    private String name;	
+//MP-MANAGED-UPDATABLE-ENDING
+
+//MP-MANAGED-ADDED-AREA-BEGINNING @privilege_type-field-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @privilege_type-field-annotation@
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @ATTRIBUTE-privilege_type@
     @Column(name="privilege_type",  length=45, nullable=false,  unique=false)
     @Required
     @Editor(forViews="base,Create,Update,DEFAULT,sponsorDEFAULT_VIEW", value="SponsorPrivilegeTypeComboEditor")
-    private String privilegeType; 
+    private String privilegeType;	
+//MP-MANAGED-UPDATABLE-ENDING
+
+//MP-MANAGED-ADDED-AREA-BEGINNING @status-field-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @status-field-annotation@
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @ATTRIBUTE-status@
     @Column(name="status",  length=45, nullable=false,  unique=false)
     @Required
     @Editor(forViews="base,Create,Update,DEFAULT,sponsorDEFAULT_VIEW", value="SponsorStatusComboEditor")
-    private String status; 
+    private String status;	
+//MP-MANAGED-UPDATABLE-ENDING
+
 
     @ManyToOne (fetch=FetchType.LAZY ,optional=false) //remove optional=false to aggragate but leads to a side effect when going directly to the entity: required check is not performed=> if no set DB check constraint is raised...
     @JoinColumn(name="address_id", nullable=false,  unique=false  )
@@ -136,27 +158,36 @@ public class Sponsor {
     }
     
 
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @GETTER-SETTER-name@
     public String getName() {
         return name;
     }
 	
     public void setName (String name) {
         this.name =  name;
-    }
+    } 
+//MP-MANAGED-UPDATABLE-ENDING
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @GETTER-SETTER-privilege_type@
     public String getPrivilegeType() {
         return privilegeType;
     }
 	
     public void setPrivilegeType (String privilegeType) {
         this.privilegeType =  privilegeType;
-    }
+    } 
+//MP-MANAGED-UPDATABLE-ENDING
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @GETTER-SETTER-status@
     public String getStatus() {
         return status;
     }
 	
     public void setStatus (String status) {
         this.status =  status;
-    }
+    } 
+//MP-MANAGED-UPDATABLE-ENDING
+
 
     public Address getAddressId () {  //
     	return addressId;
@@ -188,5 +219,9 @@ public class Sponsor {
     	    getSpeakers().add(speaker);
     }
     
+
+
+//MP-MANAGED-ADDED-AREA-BEGINNING @implementation@
+//MP-MANAGED-ADDED-AREA-ENDING @implementation@
 
 }

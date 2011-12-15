@@ -9,8 +9,19 @@
     	<class>org.openxava.session.GalleryImage</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.cache.provider_class" value="net.sf.ehcache.hibernate.SingletonEhCacheProvider" />
+            <property name="net.sf.ehcache.configurationResourceName" value="/ehcache.xml" />
+            <property name="hibernate.cache.use_query_cache" value="true" />
+            <property name="hibernate.cache.use_second_level_cache" value="true" />
+            <property name="hibernate.generate_statistics" value="true" />			
+<!--MP-MANAGED-ADDED-AREA-BEGINNING @properties@-->
+<!--MP-MANAGED-ADDED-AREA-ENDING @properties@-->
         </properties>
+<!--MP-MANAGED-ADDED-AREA-BEGINNING @persistence-unit@-->
+<!--MP-MANAGED-ADDED-AREA-ENDING @persistence-unit@-->
     </persistence-unit>       
-    
-    
+
+<!--MP-MANAGED-ADDED-AREA-BEGINNING @persistence@-->
+<!--MP-MANAGED-ADDED-AREA-ENDING @persistence@-->
+
 </persistence>
