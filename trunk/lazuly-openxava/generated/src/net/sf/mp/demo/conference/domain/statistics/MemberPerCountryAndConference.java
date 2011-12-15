@@ -1,5 +1,7 @@
 package net.sf.mp.demo.conference.domain.statistics;
 
+//MP-MANAGED-ADDED-AREA-BEGINNING @import@
+//MP-MANAGED-ADDED-AREA-ENDING @import@
 import java.sql.*;
 import java.util.Date;
 import java.util.List;
@@ -26,6 +28,7 @@ import net.sf.mp.demo.conference.domain.statistics.MemberPerRoleCountryAndConfer
 		name="base",
 		members=
         "" 	
+        + "id  ; "
         + "country  ; "
         + "conferenceName  ; "
         + "number  ; "
@@ -39,12 +42,12 @@ import net.sf.mp.demo.conference.domain.statistics.MemberPerRoleCountryAndConfer
 		extendsView="base",
         members=
           "" 	
-	    + "memberPerRoleCountryAndConferences { memberPerRoleCountryAndConferences };" //+ "statMbByRoleStatMbPerCtryConfIds { statMbByRoleStatMbPerCtryConfIds };" 
+	    + "memberPerRoleCountryAndConferences { memberPerRoleCountryAndConferences };" //+ "${link}${columnclass}s { ${link}${columnclass}s };" 
 	),
 	@View(extendsView="base",
         members=
           "" 	
-	    + "memberPerRoleCountryAndConferences { memberPerRoleCountryAndConferences };" //+ "statMbByRoleStatMbPerCtryConfIds { statMbByRoleStatMbPerCtryConfIds };" 
+	    + "memberPerRoleCountryAndConferences { memberPerRoleCountryAndConferences };" //+ "${link}${columnclass}s { ${link}${columnclass}s };" 
 	),
     @View(name="memberPerCountryAndConferenceDEFAULT_VIEW", 
 	   members=
@@ -58,7 +61,8 @@ import net.sf.mp.demo.conference.domain.statistics.MemberPerRoleCountryAndConfer
 @Tabs({
 @Tab(
 properties=
-     " country "
+     " id "
+    +",  country "
     +",  conferenceName "
     +",  number "
 )
@@ -66,7 +70,8 @@ properties=
 @Tab(
 name = "MemberPerCountryAndConferenceTab",
 properties=
-     " country "
+     " id "
+    +",  country "
     +",  conferenceName "
     +",  number "
 )
@@ -74,26 +79,46 @@ properties=
 @Tab(
 name = "MemberPerCountryAndConferenceTabWithRef",
 properties=
-     " country "
+     " id "
+    +",  country "
     +",  conferenceName "
     +",  number "
 )
 })
-
+//MP-MANAGED-ADDED-AREA-BEGINNING @class-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @class-annotation@
 public class MemberPerCountryAndConference {
 
     @Id @Column(name="id" ,length=300)
     private String id; 
 
+//MP-MANAGED-ADDED-AREA-BEGINNING @country-field-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @country-field-annotation@
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @ATTRIBUTE-country@
     @Column(name="country",  length=45, nullable=false,  unique=false)
     @Required
-    private String country; 
+    private String country;	
+//MP-MANAGED-UPDATABLE-ENDING
+
+//MP-MANAGED-ADDED-AREA-BEGINNING @conference_name-field-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @conference_name-field-annotation@
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @ATTRIBUTE-conference_name@
     @Column(name="conference_name",  length=255, nullable=false,  unique=false)
     @Required
-    private String conferenceName; 
+    private String conferenceName;	
+//MP-MANAGED-UPDATABLE-ENDING
+
+//MP-MANAGED-ADDED-AREA-BEGINNING @number-field-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @number-field-annotation@
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @ATTRIBUTE-number@
     @Column(name="number",   nullable=false,  unique=false)
     @Required
-    private Long number; 
+    private Long number;	
+//MP-MANAGED-UPDATABLE-ENDING
+
 
 
     @OneToMany (targetEntity=net.sf.mp.demo.conference.domain.statistics.MemberPerRoleCountryAndConference.class, fetch=FetchType.LAZY, mappedBy="statMbPerCtryConfId", cascade=CascadeType.REMOVE)//, cascade=CascadeType.ALL)
@@ -117,27 +142,36 @@ public class MemberPerCountryAndConference {
     }
     
 
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @GETTER-SETTER-country@
     public String getCountry() {
         return country;
     }
 	
     public void setCountry (String country) {
         this.country =  country;
-    }
+    } 
+//MP-MANAGED-UPDATABLE-ENDING
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @GETTER-SETTER-conference_name@
     public String getConferenceName() {
         return conferenceName;
     }
 	
     public void setConferenceName (String conferenceName) {
         this.conferenceName =  conferenceName;
-    }
+    } 
+//MP-MANAGED-UPDATABLE-ENDING
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @GETTER-SETTER-number@
     public Long getNumber() {
         return number;
     }
 	
     public void setNumber (Long number) {
         this.number =  number;
-    }
+    } 
+//MP-MANAGED-UPDATABLE-ENDING
+
 
 
     public Set<MemberPerRoleCountryAndConference> getMemberPerRoleCountryAndConferences() {
@@ -155,5 +189,9 @@ public class MemberPerCountryAndConference {
     	    getMemberPerRoleCountryAndConferences().add(memberPerRoleCountryAndConference);
     }
     
+
+
+//MP-MANAGED-ADDED-AREA-BEGINNING @implementation@
+//MP-MANAGED-ADDED-AREA-ENDING @implementation@
 
 }

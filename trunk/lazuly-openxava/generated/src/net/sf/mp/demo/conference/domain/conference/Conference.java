@@ -1,5 +1,7 @@
 package net.sf.mp.demo.conference.domain.conference;
 
+//MP-MANAGED-ADDED-AREA-BEGINNING @import@
+//MP-MANAGED-ADDED-AREA-ENDING @import@
 import java.sql.*;
 import java.util.Date;
 import java.util.List;
@@ -29,10 +31,11 @@ import net.sf.mp.demo.conference.domain.conference.Address;
 		name="base",
 		members=
         "" 	
+        + "id  ; "
         + "name  ; "
         + "startDate  ; "
         + "endDate  ; "
-	    + "addressId;"  
+        + "addressId  ; "
 		),
 	@View(
 		name="Create", 
@@ -43,16 +46,16 @@ import net.sf.mp.demo.conference.domain.conference.Address;
 		extendsView="base",
         members=
           "" 	
-	    + "conferenceFeedbacks { conferenceFeedbacks };" //+ "sponsorConferenceIds { sponsorConferenceIds };" 
-	    + "conferenceMembers { conferenceMembers };" //+ "sponsorConferenceIds { sponsorConferenceIds };" 
-	    + "sponsors { sponsors };" //+ "sponsorConferenceIds { sponsorConferenceIds };" 
+	    + "conferenceFeedbacks { conferenceFeedbacks };" //+ "${link}${columnclass}s { ${link}${columnclass}s };" 
+	    + "conferenceMembers { conferenceMembers };" //+ "${link}${columnclass}s { ${link}${columnclass}s };" 
+	    + "sponsors { sponsors };" //+ "${link}${columnclass}s { ${link}${columnclass}s };" 
 	),
 	@View(extendsView="base",
         members=
           "" 	
-	    + "conferenceFeedbacks { conferenceFeedbacks };" //+ "sponsorConferenceIds { sponsorConferenceIds };" 
-	    + "conferenceMembers { conferenceMembers };" //+ "sponsorConferenceIds { sponsorConferenceIds };" 
-	    + "sponsors { sponsors };" //+ "sponsorConferenceIds { sponsorConferenceIds };" 
+	    + "conferenceFeedbacks { conferenceFeedbacks };" //+ "${link}${columnclass}s { ${link}${columnclass}s };" 
+	    + "conferenceMembers { conferenceMembers };" //+ "${link}${columnclass}s { ${link}${columnclass}s };" 
+	    + "sponsors { sponsors };" //+ "${link}${columnclass}s { ${link}${columnclass}s };" 
 	),
     @View(name="conferenceDEFAULT_VIEW", 
 	   members=
@@ -87,20 +90,39 @@ properties=
     +",  endDate "
 )
 })
-
+//MP-MANAGED-ADDED-AREA-BEGINNING @class-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @class-annotation@
 public class Conference {
 
     @Hidden @Id @Column(name="id" )
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id; 
 
+//MP-MANAGED-ADDED-AREA-BEGINNING @name-field-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @name-field-annotation@
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @ATTRIBUTE-name@
     @Column(name="name",  length=255, nullable=false,  unique=false)
     @Required
-    private String name; 
+    private String name;	
+//MP-MANAGED-UPDATABLE-ENDING
+
+//MP-MANAGED-ADDED-AREA-BEGINNING @start_date-field-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @start_date-field-annotation@
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @ATTRIBUTE-start_date@
     @Column(name="start_date",    nullable=true,  unique=false)
-    private Date startDate; 
+    private Date startDate;	
+//MP-MANAGED-UPDATABLE-ENDING
+
+//MP-MANAGED-ADDED-AREA-BEGINNING @end_date-field-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @end_date-field-annotation@
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @ATTRIBUTE-end_date@
     @Column(name="end_date",    nullable=true,  unique=false)
-    private Date endDate; 
+    private Date endDate;	
+//MP-MANAGED-UPDATABLE-ENDING
+
 
     @ManyToOne (fetch=FetchType.LAZY ,optional=false) //remove optional=false to aggragate but leads to a side effect when going directly to the entity: required check is not performed=> if no set DB check constraint is raised...
     @JoinColumn(name="address_id", nullable=false,  unique=false  )
@@ -137,27 +159,36 @@ public class Conference {
     }
     
 
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @GETTER-SETTER-name@
     public String getName() {
         return name;
     }
 	
     public void setName (String name) {
         this.name =  name;
-    }
+    } 
+//MP-MANAGED-UPDATABLE-ENDING
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @GETTER-SETTER-start_date@
     public Date getStartDate() {
         return startDate;
     }
 	
     public void setStartDate (Date startDate) {
         this.startDate =  startDate;
-    }
+    } 
+//MP-MANAGED-UPDATABLE-ENDING
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @GETTER-SETTER-end_date@
     public Date getEndDate() {
         return endDate;
     }
 	
     public void setEndDate (Date endDate) {
         this.endDate =  endDate;
-    }
+    } 
+//MP-MANAGED-UPDATABLE-ENDING
+
 
     public Address getAddressId () {  //
     	return addressId;
@@ -212,5 +243,9 @@ public class Conference {
     	    getSponsors().add(sponsor);
     }
     
+
+
+//MP-MANAGED-ADDED-AREA-BEGINNING @implementation@
+//MP-MANAGED-ADDED-AREA-ENDING @implementation@
 
 }

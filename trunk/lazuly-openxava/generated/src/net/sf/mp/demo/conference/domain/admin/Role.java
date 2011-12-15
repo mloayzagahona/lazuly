@@ -1,5 +1,7 @@
 package net.sf.mp.demo.conference.domain.admin;
 
+//MP-MANAGED-ADDED-AREA-BEGINNING @import@
+//MP-MANAGED-ADDED-AREA-ENDING @import@
 import java.sql.*;
 import java.util.Date;
 import java.util.List;
@@ -26,6 +28,7 @@ import net.sf.mp.demo.conference.domain.conference.ConferenceMember;
 		name="base",
 		members=
         "" 	
+        + "id  ; "
         + "name  ; "
 		),
 	@View(
@@ -69,16 +72,23 @@ properties=
      " name "
 )
 })
-
+//MP-MANAGED-ADDED-AREA-BEGINNING @class-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @class-annotation@
 public class Role {
 
     @Hidden @Id @Column(name="id" )
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id; 
 
+//MP-MANAGED-ADDED-AREA-BEGINNING @name-field-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @name-field-annotation@
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @ATTRIBUTE-name@
     @Column(name="name",  length=45, nullable=false,  unique=false)
     @Required
-    private String name; 
+    private String name;	
+//MP-MANAGED-UPDATABLE-ENDING
+
 
 
 
@@ -106,13 +116,16 @@ public class Role {
     }
     
 
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @GETTER-SETTER-name@
     public String getName() {
         return name;
     }
 	
     public void setName (String name) {
         this.name =  name;
-    }
+    } 
+//MP-MANAGED-UPDATABLE-ENDING
+
 
 
     public Set<ConferenceMember> getConferenceMembers() {
@@ -130,5 +143,9 @@ public class Role {
         getConferenceMembers().add(conferenceMembers);
     }	
 
+
+
+//MP-MANAGED-ADDED-AREA-BEGINNING @implementation@
+//MP-MANAGED-ADDED-AREA-ENDING @implementation@
 
 }

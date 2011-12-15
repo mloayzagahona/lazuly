@@ -9,6 +9,7 @@ xcopy * %OX_HOME%\workspace\conference /y /s
 
 copy other\tomcat\snippet\context.xml %OX_HOME%\tomcat\conf
 
+xcopy %MP_HOME%\application\lib\extra\*.jar %OX_HOME%\tomcat\lib\*.* /y /s
 
 cd %OX_HOME%
 call start-tomcat.bat

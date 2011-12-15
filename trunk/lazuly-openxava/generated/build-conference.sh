@@ -11,6 +11,7 @@ cp -R * ${OX_HOME}/workspace/conference
 
 cp other/tomcat/snippet/context.xml $OX_HOME/tomcat/conf
 
+cp $MP_HOME/application/lib/extra/*.jar $OX_HOME/tomcat/lib
 
 cd $OX_HOME
 ./start-tomcat.sh

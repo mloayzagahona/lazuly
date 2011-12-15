@@ -1,5 +1,7 @@
 package net.sf.mp.demo.conference.domain.conference;
 
+//MP-MANAGED-ADDED-AREA-BEGINNING @import@
+//MP-MANAGED-ADDED-AREA-ENDING @import@
 import java.sql.*;
 import java.util.Date;
 import java.util.List;
@@ -29,9 +31,10 @@ import net.sf.mp.demo.conference.domain.admin.Country;
 		name="base",
 		members=
         "" 	
+        + "id  ; "
         + "street1  ; "
         + "street2  ; "
-	    + "countryId;"  
+        + "countryId  ; "
 		),
 	@View(
 		name="Create", 
@@ -42,16 +45,16 @@ import net.sf.mp.demo.conference.domain.admin.Country;
 		extendsView="base",
         members=
           "" 	
-	    + "conferences { conferences };" //+ "sponsorAddressIds { sponsorAddressIds };" 
-	    + "conferenceMembers { conferenceMembers };" //+ "sponsorAddressIds { sponsorAddressIds };" 
-	    + "sponsors { sponsors };" //+ "sponsorAddressIds { sponsorAddressIds };" 
+	    + "conferences { conferences };" //+ "${link}${columnclass}s { ${link}${columnclass}s };" 
+	    + "conferenceMembers { conferenceMembers };" //+ "${link}${columnclass}s { ${link}${columnclass}s };" 
+	    + "sponsors { sponsors };" //+ "${link}${columnclass}s { ${link}${columnclass}s };" 
 	),
 	@View(extendsView="base",
         members=
           "" 	
-	    + "conferences { conferences };" //+ "sponsorAddressIds { sponsorAddressIds };" 
-	    + "conferenceMembers { conferenceMembers };" //+ "sponsorAddressIds { sponsorAddressIds };" 
-	    + "sponsors { sponsors };" //+ "sponsorAddressIds { sponsorAddressIds };" 
+	    + "conferences { conferences };" //+ "${link}${columnclass}s { ${link}${columnclass}s };" 
+	    + "conferenceMembers { conferenceMembers };" //+ "${link}${columnclass}s { ${link}${columnclass}s };" 
+	    + "sponsors { sponsors };" //+ "${link}${columnclass}s { ${link}${columnclass}s };" 
 	),
     @View(name="addressDEFAULT_VIEW", 
 	   members=
@@ -85,17 +88,30 @@ properties=
     +",  countryId.name "
 )
 })
-
+//MP-MANAGED-ADDED-AREA-BEGINNING @class-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @class-annotation@
 public class Address {
 
     @Hidden @Id @Column(name="id" )
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id; 
 
+//MP-MANAGED-ADDED-AREA-BEGINNING @street1-field-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @street1-field-annotation@
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @ATTRIBUTE-street1@
     @Column(name="street1",  length=255,  nullable=true,  unique=false)
-    private String street1; 
+    private String street1;	
+//MP-MANAGED-UPDATABLE-ENDING
+
+//MP-MANAGED-ADDED-AREA-BEGINNING @street2-field-annotation@
+//MP-MANAGED-ADDED-AREA-ENDING @street2-field-annotation@
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @ATTRIBUTE-street2@
     @Column(name="street2",  length=255,  nullable=true,  unique=false)
-    private String street2; 
+    private String street2;	
+//MP-MANAGED-UPDATABLE-ENDING
+
 
     @ManyToOne (fetch=FetchType.LAZY ,optional=false) //remove optional=false to aggragate but leads to a side effect when going directly to the entity: required check is not performed=> if no set DB check constraint is raised...
     @JoinColumn(name="country_id", nullable=false,  unique=false  )
@@ -138,20 +154,26 @@ public class Address {
     }
     
 
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @GETTER-SETTER-street1@
     public String getStreet1() {
         return street1;
     }
 	
     public void setStreet1 (String street1) {
         this.street1 =  street1;
-    }
+    } 
+//MP-MANAGED-UPDATABLE-ENDING
+
+//MP-MANAGED-UPDATABLE-BEGINNING-DISABLE @GETTER-SETTER-street2@
     public String getStreet2() {
         return street2;
     }
 	
     public void setStreet2 (String street2) {
         this.street2 =  street2;
-    }
+    } 
+//MP-MANAGED-UPDATABLE-ENDING
+
 
     public Country getCountryId () {  //
     	return countryId;
@@ -206,5 +228,9 @@ public class Address {
     	    getSponsors().add(sponsor);
     }
     
+
+
+//MP-MANAGED-ADDED-AREA-BEGINNING @implementation@
+//MP-MANAGED-ADDED-AREA-ENDING @implementation@
 
 }
