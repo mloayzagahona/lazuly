@@ -1,14 +1,17 @@
 <!DOCTYPE root>
 <generator-config>
 	<configuration>
+		<conventions>
+			<target-convention type="enable-updatable-code-feature" />
+		</conventions>		
 		<model name="conference" version="1.0" package-root="net.sf.mp.demo">
 			<data-model>
 				<driver name="mysql" version="5.1.16" groupId="mysql" artifactId="mysql-connector-java"></driver>
 				<dataSource>
 					<driverClassName>org.gjt.mm.mysql.Driver</driverClassName>
 					<url>jdbc:mysql://127.0.0.1:3306/conference</url>
-					<username></username>
-					<password></password>
+					<username>root</username>
+					<password>mysql</password>
 				</dataSource>
 				<!--
 					for Oracle and DB2 please set the schema <schema> </schema>
@@ -120,7 +123,12 @@
 			<target refname="BSLA-LIB" fileName="mp-template-config-bsla-LIB-features.xml"
 				templatedir-root="../../template/framework/bsla">
 			</target>
-      			
+
+			<target refname="CACHE-LIB" 
+			   fileName="mp-template-config-CACHE-LIB.xml" 
+			   templatedir-root="../../template/framework/cache">
+			</target>
+            			
 		</targets>
 	</configuration>
 </generator-config>
