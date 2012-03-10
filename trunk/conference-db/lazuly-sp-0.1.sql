@@ -1,6 +1,6 @@
 DELIMITER //
 use conference //
-drop PROCEDURE registerAttendee// 
+drop PROCEDURE if exists registerAttendee// 
 CREATE PROCEDURE registerAttendee( 
         IN address_street1 bigint(20), 
         IN address_street2 bigint(20), 
@@ -14,7 +14,7 @@ CREATE PROCEDURE registerAttendee(
         SET attendeeId = addressId; 
     END 
 // 
-drop PROCEDURE registerAttendeeFull// 
+drop PROCEDURE if exists registerAttendeeFull// 
 CREATE PROCEDURE registerAttendeeFull( 
         IN firstName VARCHAR(255), 
         IN lastName VARCHAR(255), 
